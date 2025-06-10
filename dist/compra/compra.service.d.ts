@@ -1,0 +1,34 @@
+import { Repository } from 'typeorm';
+import { Carrinho } from './entities/carrinho.entity';
+import { CarrinhoItem } from './entities/carrinho-item.entity';
+import { Produto } from './entities/produto.entity';
+import { Compra } from './entities/compra.entity';
+import { CompraItem } from './entities/compra-item.entity';
+import { Endereco } from './entities/endereco.entity';
+import { AvaliacaoProduto } from './entities/avaliacao-produto.entity';
+import { AvaliacaoCompra } from './entities/avaliacao-compra.entity';
+import { User } from '../auth/entities/user.entity';
+import { ProdutoDto } from './dto/produto.dto';
+export declare class CompraService {
+    private carrinhoRepo;
+    private carrinhoItemRepo;
+    private produtoRepo;
+    private compraRepo;
+    private compraItemRepo;
+    private enderecoRepo;
+    private avaliacaoProdutoRepo;
+    private avaliacaoCompraRepo;
+    listarProdutos(): void;
+    buscarPorNome(_nome: string): void;
+    detalhesProduto(_id: number): void;
+    criarProduto(_dto: ProdutoDto): void;
+    constructor(carrinhoRepo: Repository<Carrinho>, carrinhoItemRepo: Repository<CarrinhoItem>, produtoRepo: Repository<Produto>, compraRepo: Repository<Compra>, compraItemRepo: Repository<CompraItem>, enderecoRepo: Repository<Endereco>, avaliacaoProdutoRepo: Repository<AvaliacaoProduto>, avaliacaoCompraRepo: Repository<AvaliacaoCompra>);
+    obterCarrinho(user: User): Promise<Carrinho>;
+    adicionarAoCarrinho(user: User, produtoId: number, quantidade: number): Promise<Carrinho>;
+    removerDoCarrinho(user: User, produtoId: number): Promise<Carrinho>;
+    criarEndereco(user: User, dados: Partial<Endereco>): Promise<Endereco>;
+    pagarCompra(user: User, enderecoId: number): Promise<Compra>;
+    obterStatusCompras(user: User): Promise<Compra[]>;
+    avaliarProduto(user: User, produtoId: number, nota: number, comentario?: string): Promise<AvaliacaoProduto>;
+    avaliarCompra(user: User, compraId: number, nota: number, comentario?: string): Promise<AvaliacaoCompra>;
+}
