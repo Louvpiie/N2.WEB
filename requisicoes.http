@@ -19,21 +19,21 @@ Content-Type: application/json
 
 ### AUTH - REMEMBER (token necessário)
 GET http://localhost:3000/api/auth/remember
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 ### AUTH - LOGOUT (token necessário)
 POST http://localhost:3000/api/auth/logout
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 
 ### COMPRA - OBTER CARRINHO (token necessário)
 GET http://localhost:3000/api/compra/carrinho
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 ### COMPRA - ADICIONAR AO CARRINHO (token necessário)
 POST http://localhost:3000/api/compra/carrinho/adicionar
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 {
   "produtoId": 1,
@@ -43,7 +43,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
 ### COMPRA - REMOVER DO CARRINHO (token necessário)
 POST http://localhost:3000/api/compra/carrinho/remover
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 {
   "produtoId": 1
@@ -52,7 +52,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
 ### COMPRA - CRIAR ENDEREÇO (token necessário)
 POST http://localhost:3000/api/compra/endereco
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 {
   "logradouro": "Rua Exemplo, 123",
@@ -65,7 +65,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
 ### COMPRA - PAGAMENTO (token necessário)
 POST http://localhost:3000/api/compra/pagamento
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 {
   "enderecoId": 1
@@ -73,12 +73,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
 
 ### COMPRA - STATUS DAS COMPRAS (token necessário)
 GET http://localhost:3000/api/compra/status
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 ### COMPRA - AVALIAR PRODUTO (token necessário)
 POST http://localhost:3000/api/compra/avaliar/produto
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 {
   "produtoId": 1,
@@ -89,7 +89,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
 ### COMPRA - AVALIAR COMPRA (token necessário)
 POST http://localhost:3000/api/compra/avaliar/compra
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+Authorization: Bearer ({TOKEN AQUI})
 
 {
   "compraId": 1,
