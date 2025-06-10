@@ -1,0 +1,98 @@
+### AUTH - REGISTER
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "usuario1",
+  "email": "usuario1@example.com",
+  "password": "senha123"
+}
+
+### AUTH - LOGIN
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "usuario1@example.com",
+  "password": "senha123"
+}
+
+### AUTH - REMEMBER (token necessário)
+GET http://localhost:3000/api/auth/remember
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+### AUTH - LOGOUT (token necessário)
+POST http://localhost:3000/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+
+### COMPRA - OBTER CARRINHO (token necessário)
+GET http://localhost:3000/api/compra/carrinho
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+### COMPRA - ADICIONAR AO CARRINHO (token necessário)
+POST http://localhost:3000/api/compra/carrinho/adicionar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+{
+  "produtoId": 1,
+  "quantidade": 2
+}
+
+### COMPRA - REMOVER DO CARRINHO (token necessário)
+POST http://localhost:3000/api/compra/carrinho/remover
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+{
+  "produtoId": 1
+}
+
+### COMPRA - CRIAR ENDEREÇO (token necessário)
+POST http://localhost:3000/api/compra/endereco
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+{
+  "logradouro": "Rua Exemplo, 123",
+  "cidade": "São Paulo",
+  "estado": "SP",
+  "cep": "01234-567",
+  "pais": "Brasil"
+}
+
+### COMPRA - PAGAMENTO (token necessário)
+POST http://localhost:3000/api/compra/pagamento
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+{
+  "enderecoId": 1
+}
+
+### COMPRA - STATUS DAS COMPRAS (token necessário)
+GET http://localhost:3000/api/compra/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+### COMPRA - AVALIAR PRODUTO (token necessário)
+POST http://localhost:3000/api/compra/avaliar/produto
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+{
+  "produtoId": 1,
+  "nota": 5,
+  "comentario": "Ótimo produto!"
+}
+
+### COMPRA - AVALIAR COMPRA (token necessário)
+POST http://localhost:3000/api/compra/avaliar/compra
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5
+
+{
+  "compraId": 1,
+  "nota": 4,
+  "comentario": "Entrega rápida e produto conforme o esperado."
+}
