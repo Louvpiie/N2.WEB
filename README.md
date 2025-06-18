@@ -78,5 +78,4 @@ Você poderá visualizar e testar os endpoints via Swagger.
 * Louie Nery Silva UC24101358
 * João Filipe Alves de Albuquerque UC24102128
 * Mateus Henrique Lacerda Lopes UC24102584
-* Guilherme Souza Rocha UC24101057
 
